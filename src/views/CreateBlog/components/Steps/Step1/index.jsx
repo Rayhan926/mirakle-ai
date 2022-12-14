@@ -1,6 +1,6 @@
 import FormikInput from "@components/FormikInput";
 import { Formik } from "formik";
-import useCreateBlog from "hooks/useCreateBlog";
+import useCreateBlog from "@hooks/useCreateBlog";
 import React from "react";
 import * as Yup from "yup";
 

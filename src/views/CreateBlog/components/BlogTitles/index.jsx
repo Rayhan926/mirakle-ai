@@ -1,6 +1,6 @@
 import { IoMdClose } from "react-icons/io";
 import React, { useEffect, useState } from "react";
-import useCreateBlog from "hooks/useCreateBlog";
+import useCreateBlog from "@hooks/useCreateBlog";
 import RefreshIcon from "@components/Icons/RefreshIcon";
 import { useFormikContext } from "formik";
 import FormikErrorMessage from "@components/FormikErrorMessage";
@@ -37,7 +37,7 @@ const BlogTitles = () => {
                   type="radio"
                   checked={values.titleId === id}
                   onChange={() => setFieldValue("titleId", id)}
-                  className="w-4 h-4 cursor-pointer accent-[#4E47DC]"
+                  className="w-4 h-4 cursor-pointer accent-[#4E47DC] opacity-50 checked:opacity-100"
                   name="title"
                 />
               </label>

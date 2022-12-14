@@ -15,10 +15,10 @@ const OutlineTipsTooltip = () => {
       </button>
 
       <div
-        className={`absolute md:top-0 right-0 md:right-auto top-[calc(100%+8px)] md:left-[calc(100%+60px)] w-[240px] bg-white border border-dashed border-dark px-6 py-2.5 duration-200 ${
+        className={`absolute lg:top-0 right-0 lg:right-auto top-[calc(100%+8px)] lg:left-[calc(100%+60px)] w-[240px] bg-white border border-dashed border-dark px-6 py-2.5 duration-200 ${
           isOpen
             ? "translate-x-0 translate-y-0 opacity-100"
-            : "translate-y-5 md:translate-x-5 md:translate-y-0 opacity-0 pointer-events-none"
+            : "translate-y-5 lg:translate-x-5 lg:translate-y-0 opacity-0 pointer-events-none"
         }`}
       >
         <button

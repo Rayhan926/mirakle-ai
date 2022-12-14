@@ -2,23 +2,23 @@ import React from "react";
 import OutlineTipsTooltip from "../../OutlineTipsTooltip";
 import BlogTitles from "../../BlogTitles";
 import { Formik } from "formik";
-import useCreateBlog from "hooks/useCreateBlog";
+import useCreateBlog from "@hooks/useCreateBlog";
 
 import * as Yup from "yup";
 import GoToPreviousStep from "../../GoToPreviousStep";
 import GeneratingSpinner from "../../GeneratingSpinner";
-import useGenerating from "hooks/useGenerating";
+import useGenerating from "@hooks/useGenerating";
 
 const validationSchema = Yup.object().shape({
   titleId: Yup.string().required("Please select a title"),
 });
 
 const Step2 = () => {
-  const { isGenerating } = useGenerating();
   const { getStepData, setStepData, goToNextStep, titles } = useCreateBlog();
-
   const step2Data = getStepData("step2");
-  console.log({ step2Data });
+
+  const { isGenerating } = useGenerating(step2Data.titleId ? false : true);
+
   return (
     <div>
       <GoToPreviousStep />
@@ -42,12 +42,10 @@ const Step2 = () => {
             }}
           >
             <div>
-              <div className="flex justify-between gap-3">
-                <h2 className="__create_blog_form_title">
-                  <strong>Step 2:</strong> Select a title
-                </h2>
-                <OutlineTipsTooltip />
-              </div>
+              <h2 className="__create_blog_form_title">
+                <strong>Step 2:</strong> Select a title
+              </h2>
+
               <p className="__create_blog_form_subtitle">
                 Select from our generated list of titles or write your own.
               </p>

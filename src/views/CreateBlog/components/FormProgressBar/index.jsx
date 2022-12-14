@@ -1,4 +1,4 @@
-import useCreateBlog from "hooks/useCreateBlog";
+import useCreateBlog from "@hooks/useCreateBlog";
 import React from "react";
 
 const FormProgressBar = () => {

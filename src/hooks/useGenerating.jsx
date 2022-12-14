@@ -1,12 +1,12 @@
 import React, { useEffect, useState } from "react";
 
-const useGenerating = () => {
-  const [isGenerating, setIsGenerating] = useState(true);
+const useGenerating = (initialVal = true) => {
+  const [isGenerating, setIsGenerating] = useState(initialVal);
 
   useEffect(() => {
     let timeout = setTimeout(() => {
       setIsGenerating(false);
-    }, 3000);
+    }, 300);
 
     return () => clearTimeout(timeout);
   }, []);
