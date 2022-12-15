@@ -25,11 +25,11 @@ const Step3 = () => {
           console.log({ val });
           const finalData = setStepData("step3", val);
 
-          console.log(finalData);
+          console.log(finalData); // all stesp data
           console.log({
             step2Title: titles.find((t) => t.id === finalData["step2"].titleId)
               .title,
-          });
+          }); // Only title from the step 2
           setTimeout(() => {
             // alert(JSON.stringify(finalData));
             // actions.setSubmitting(false);
