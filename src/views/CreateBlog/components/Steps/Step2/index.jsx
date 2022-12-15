@@ -60,7 +60,7 @@ const Step2 = () => {
                   type="submit"
                   className="__create_blog_form_btn !mt-7 lg:!mt-[38px]"
                 >
-                  Write Draft
+                  Next: Outline
                 </button>
               </>
             )}

@@ -18,7 +18,7 @@ const ConfirmBeforeExitModal = () => {
         <div
           id="modalOverlay"
           onClick={(e) => e.target.id === "modalOverlay" && close()}
-          className="fixed top-0 left-0 w-full h-screen bg-black/50 flex items-center justify-center"
+          className="fixed z-[99999] top-0 left-0 w-full h-screen bg-black/50 flex items-center justify-center"
         >
           <div
             style={{ boxShadow: "0px 4px 4px rgba(0, 0, 0, 0.06)" }}
