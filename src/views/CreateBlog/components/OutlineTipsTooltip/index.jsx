@@ -1,8 +1,15 @@
 import BulbIcon from "@components/Icons/BulbIcon";
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 
 const OutlineTipsTooltip = () => {
   const [isOpen, setIsOpen] = useState(false);
+
+  useEffect(() => {
+    setTimeout(() => {
+      setIsOpen(true);
+    }, 200);
+  }, []);
+
   return (
     <div className="relative z-10">
       <button
