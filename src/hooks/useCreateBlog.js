@@ -33,10 +33,17 @@ export const CreateBlogProvider = ({ children }) => {
   const getStepData = (stepName) => stepsData[stepName];
 
   const setStepData = (stepName, data) => {
-    _setStepsData((prev) => ({
-      ...prev,
-      [stepName]: data,
-    }));
+    let finalData;
+    _setStepsData((prev) => {
+      finalData = {
+        ...prev,
+        [stepName]: data,
+      };
+
+      return finalData;
+    });
+
+    return finalData;
   };
 
   const goToNextStep = () => {
@@ -48,6 +55,7 @@ export const CreateBlogProvider = ({ children }) => {
   };
 
   const value = {
+    stepsData,
     activeStep,
     totalSteps,
     getStepData,

@@ -6,7 +6,7 @@ const useGenerating = (initialVal = true) => {
   useEffect(() => {
     let timeout = setTimeout(() => {
       setIsGenerating(false);
-    }, 300);
+    }, 2000);
 
     return () => clearTimeout(timeout);
   }, []);

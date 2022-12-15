@@ -8,7 +8,7 @@ const FormikErrorMessage = ({ name }) => {
   if (!isError) return null;
 
   return (
-    <p className="text-[13px] mt-0.5 text-red-500 flex items-center gap-1">
+    <p className="text-[12px] mt-0.5 text-red-500 flex items-center gap-1">
       <svg
         stroke="currentColor"
         fill="currentColor"

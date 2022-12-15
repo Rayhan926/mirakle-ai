@@ -7,8 +7,11 @@ import useGenerating from "@hooks/useGenerating";
 import GeneratingSpinner from "../../GeneratingSpinner";
 import GeneratingDraft from "../../GeneratingDraft";
 import { Formik } from "formik";
+import { outlines } from "src/data/titles";
+import useCreateBlog from "@hooks/useCreateBlog";
 
 const Step3 = () => {
+  const { titles, setStepData } = useCreateBlog();
   const { isGenerating } = useGenerating();
   return (
     <div>
@@ -30,9 +33,21 @@ const Step3 = () => {
       ) : (
         <>
           <Formik
-            initialValues={{}}
+            initialValues={{
+              outlines,
+            }}
             onSubmit={(val, actions) => {
+              console.log({ val });
+              const finalData = setStepData("step3", val);
+
+              console.log(finalData);
+              console.log({
+                step2Title: titles.find(
+                  (t) => t.id === finalData["step2"].titleId,
+                ).title,
+              });
               setTimeout(() => {
+                // alert(JSON.stringify(finalData));
                 actions.setSubmitting(false);
               }, 15.2 * 1000);
             }}

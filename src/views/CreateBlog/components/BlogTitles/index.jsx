@@ -37,7 +37,7 @@ const BlogTitles = () => {
                   type="radio"
                   checked={values.titleId === id}
                   onChange={() => setFieldValue("titleId", id)}
-                  className="w-4 h-4 cursor-pointer accent-[#4E47DC] opacity-50 checked:opacity-100"
+                  className="w-4 h-4 cursor-pointer accent-primary opacity-50 checked:opacity-100"
                   name="title"
                 />
               </label>

@@ -11,6 +11,8 @@ module.exports = {
 
       colors: {
         dark: "#160C28",
+        primary: "#4E47DC",
+        softGray: "#D9D9D9",
       },
     },
   },

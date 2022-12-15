@@ -8,7 +8,7 @@ const Header = () => {
 
       {/* Profile Dropdown --Start-- */}
       <div className="flex items-center gap-1 cursor-pointer">
-        <div className="w-8 h-8 rounded-full bg-[#4E47DC] flex items-center justify-center font-montserrat font-bold text-xs text-white">
+        <div className="w-8 h-8 rounded-full bg-primary flex items-center justify-center font-montserrat font-bold text-xs text-white">
           M
         </div>
 

@@ -10,12 +10,16 @@ const CreateBlogForm = () => {
   const { activeStep } = useCreateBlog();
   return (
     <div className="px-5">
-      <div className="max-w-[533px] mx-auto mt-14 lg:mt-[50px] relative">
-        <FormProgressBar />
-        <div className="rounded-[5px] rounded-t-none border border-[#DDDDDD] bg-white shadow-[0px_4px_4px_rgba(0_0_0_0.09)] px-5 py-6 lg:py-10 lg:px-[50px]">
-          {activeStep === 1 && <Step1 />}
-          {activeStep === 2 && <Step2 />}
-          {activeStep === 3 && <Step3 />}
+      <div className="max-w-[533px] mx-auto mt-14 lg:mt-[50px]">
+        <h1 className="text-center font-bold text-dark mb-10">Blog Post</h1>
+
+        <div className="relative">
+          <FormProgressBar />
+          <div className="rounded-[5px] rounded-t-none bg-white shadow px-5 py-6 lg:py-10 lg:px-[50px]">
+            {activeStep === 1 && <Step1 />}
+            {activeStep === 2 && <Step2 />}
+            {activeStep === 3 && <Step3 />}
+          </div>
         </div>
       </div>
     </div>

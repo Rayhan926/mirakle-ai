@@ -11,7 +11,7 @@ const FormikInput = ({ name, label, ...props }) => {
   return (
     <div className="grid grid-cols-[100px,auto]">
       <label
-        className="font-bold text-xs flex items-center max-h-[46px]"
+        className="font-bold text-xs flex items-center max-h-[38px]"
         htmlFor={id}
       >
         {label}

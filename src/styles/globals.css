@@ -1,4 +1,4 @@
-@import url("https://fonts.googleapis.com/css2?family=Inter:wght@500&family=Montserrat:wght@500&family=Roboto:wght@300;400;700&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Inter:wght@500&family=Montserrat:wght@500;700&family=Roboto:wght@300;400;700&display=swap");
 
 @tailwind base;
 @tailwind components;
@@ -12,7 +12,7 @@
     @apply text-xs lg:text-[14px] lg:leading-[17px] font-montserrat font-normal italic text-black/60 mt-1;
   }
   .__create_blog_form_input {
-    @apply outline-none border border-[#DEE2DF] rounded w-full focus:border-[#cccecd] py-2.5 px-3 placeholder:text-black/10 text-dark font-medium;
+    @apply outline-none border border-[#DEE2DF] rounded w-full max-h-[38px] text-[13px] focus:border-[#cccecd] py-2.5 px-3 placeholder:text-black/10 text-dark font-medium;
   }
   .__create_blog_form_btn {
     @apply outline-none rounded-[5px] bg-dark py-[10px] text-white text-sm text-center font-bold w-full border border-dark hover:bg-white hover:text-dark duration-200;
@@ -48,4 +48,8 @@
     stroke-dasharray: 90, 150;
     stroke-dashoffset: -124;
   }
+}
+
+.shadow {
+  box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.06);
 }
