@@ -80,7 +80,7 @@ const CheckBox = ({ label, value }) => {
             color="#E1E1E1"
             className="__unchecked"
           />
-          <MdCheckBox size={18} className="hidden __checked text-[#8984de]" />
+          <MdCheckBox size={18} className="hidden __checked text-primary" />
         </div>
         <p className="text-xs font-medium">{label}</p>
       </div>
