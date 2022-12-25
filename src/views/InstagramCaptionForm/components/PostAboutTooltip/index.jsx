@@ -1,7 +1,7 @@
 import BulbIcon from "@components/Icons/BulbIcon";
 import React, { useEffect, useState } from "react";
 
-const DescribeProductTooltip = () => {
+const PostAboutTooltip = () => {
   const [isOpen, setIsOpen] = useState(false);
 
   useEffect(() => {
@@ -37,18 +37,20 @@ const DescribeProductTooltip = () => {
         </button>
 
         <div className="text-sm font-bold space-y-3">
-          <p className="underline"> Product description tips</p>
-          <p> 1- Provide more details to get more specific results</p>
+          <p className="underline">Instagram caption tips</p>
+
+          <p>1- Provide more details to get more specific results</p>
+
           <p>
-            {" "}
             2- Try to include your audience, problem space, why it matters, and
             what makes you unique
           </p>
-          <p> 3- Use 15 words or more</p>{" "}
+
+          <p>3- Use 15 words or more</p>
         </div>
       </div>
     </div>
   );
 };
 
-export default DescribeProductTooltip;
+export default PostAboutTooltip;
