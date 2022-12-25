@@ -1,4 +1,4 @@
-@import url("https://fonts.googleapis.com/css2?family=Inter:wght@500&family=Montserrat:wght@500;700&family=Roboto:wght@300;400;700&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Inter:wght@500;700&family=Montserrat:wght@500;700&family=Roboto:wght@300;400;700&display=swap");
 
 @tailwind base;
 @tailwind components;
@@ -52,4 +52,26 @@
 
 .shadow {
   box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.06);
+}
+
+.__checkbox:checked + .__checkbox_content {
+  @apply border-black/30;
+}
+.__checkbox:checked + .__checkbox_content .__unchecked {
+  @apply hidden;
+}
+.__checkbox:checked + .__checkbox_content .__checked {
+  @apply block;
+}
+
+.__input {
+  box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.04);
+  @apply py-[8.5px] text-[13px] px-[15px] border border-[#DEE2DF] focus:border-[#c9ccc9] w-full outline-none rounded-[3px];
+}
+
+select {
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  text-indent: 1px;
+  text-overflow: "";
 }
