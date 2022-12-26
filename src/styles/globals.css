@@ -1,4 +1,4 @@
-@import url("https://fonts.googleapis.com/css2?family=Inter:wght@500;700&family=Montserrat:wght@500;700&family=Roboto:wght@300;400;700&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Inter:wght@500;700&family=Montserrat:wght@500;600;700&family=Roboto:wght@300;400;700&display=swap");
 
 @tailwind base;
 @tailwind components;
@@ -16,6 +16,17 @@
   }
   .__create_blog_form_btn {
     @apply outline-none rounded-[5px] bg-dark py-[10px] text-white text-sm text-center font-bold w-full border border-dark hover:bg-white hover:text-dark duration-200;
+  }
+
+  .__login_title {
+    @apply font-montserrat font-semibold text-[20px] leading-[24px] text-dark;
+  }
+  .__login_grid {
+    @apply grid grid-cols-1 gap-4 sm:grid-cols-2 sm:gap-3 md:gap-x-6 md:gap-y-3 mt-4 mb-[18px];
+  }
+
+  .__login_btn {
+    @apply px-12 py-3 text-[13px] bg-primary rounded-[5px] outline-none text-center text-white hover:bg-primary/90;
   }
 }
 
