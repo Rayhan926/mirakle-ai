@@ -40,7 +40,7 @@ const options = [
 ];
 
 const Step3 = () => {
-  const { getStepData, setStepData, goToPreviousStep } = useLoginForm();
+  const { getStepData, setStepData } = useLoginForm();
 
   return (
     <div>
@@ -77,14 +77,7 @@ const Step3 = () => {
                 />
               ))}
             </div>
-            <div className="flex justify-between">
-              <button
-                type="button"
-                className="__login_btn"
-                onClick={goToPreviousStep}
-              >
-                Go Back
-              </button>
+            <div className="flex justify-end">
               <button type="submit" className="__login_btn">
                 Submit
               </button>

@@ -9,7 +9,7 @@ const Login = () => {
 
   return (
     <>
-      <div className="py-14 md:py-20 lg:py-[110px]">
+      <div className="py-14 md:py-20 lg:py-[110px] px-5">
         <h1 className="text-center text-dark text-xl md:text-[24px] md:leading-[29px] font-montserrat font-semibold">
           Welcome to Mirakle!
         </h1>
@@ -18,7 +18,7 @@ const Login = () => {
           and your goals.
         </p>
 
-        <div className="max-w-[770px] px-5 mx-auto mt-16 md:mt-[90px]">
+        <div className="max-w-[770px] mx-auto mt-16 md:mt-[90px]">
           {activeStep === 1 && <Step1 />}
           {activeStep === 2 && <Step2 />}
           {activeStep === 3 && <Step3 />}
