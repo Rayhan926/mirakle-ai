@@ -1,18 +1,19 @@
 import { useRouter } from "next/router";
-import { instagramOutputs } from "src/data/mock-instagram-outputs";
+import { freeStyleOutputs } from "src/data/mock-freestyle-outputs";
 import { v4 as uuid } from "uuid";
 
 const { createContext, useState, useContext } = require("react");
 
-const InstagramCaptionFormV2Context = createContext();
+const FreeStyleFormContext = createContext();
 
-export const InstagramCaptionFormV2Provider = ({ children }) => {
+export const FreeStyleFormProvider = ({ children }) => {
   const router = useRouter();
   const [outputs, setOutputs] = useState([]);
   const [isGeneratingOutputs, setIsGeneratingOutputs] = useState(false);
   const [stepsData, _setStepsData] = useState({
     step1: {
-      postName: "",
+      title: "",
+      mainPoints: "",
       tone: "",
     },
   });
@@ -24,7 +25,7 @@ export const InstagramCaptionFormV2Provider = ({ children }) => {
     _setStepsData((prev) => {
       finalData = {
         ...prev,
-        [stepName]: data,
+        [stepName]: { ...prev[stepName], ...data },
       };
 
       return finalData;
@@ -42,8 +43,8 @@ export const InstagramCaptionFormV2Provider = ({ children }) => {
     setTimeout(() => {
       setOutputs((prev) =>
         resetOldData
-          ? instagramOutputs.map((e) => ({ ...e, id: uuid() }))
-          : [...prev, ...instagramOutputs.map((e) => ({ ...e, id: uuid() }))],
+          ? freeStyleOutputs.map((e) => ({ ...e, id: uuid() }))
+          : [...prev, ...freeStyleOutputs.map((e) => ({ ...e, id: uuid() }))],
       );
       setIsGeneratingOutputs(false);
       scrollToTop && router.push("#outputs");
@@ -81,13 +82,12 @@ export const InstagramCaptionFormV2Provider = ({ children }) => {
   };
 
   return (
-    <InstagramCaptionFormV2Context.Provider value={value}>
+    <FreeStyleFormContext.Provider value={value}>
       {children}
-    </InstagramCaptionFormV2Context.Provider>
+    </FreeStyleFormContext.Provider>
   );
 };
 
-const useInstagramCaptionFormV2 = () =>
-  useContext(InstagramCaptionFormV2Context);
+const useFreeStyleForm = () => useContext(FreeStyleFormContext);
 
-export default useInstagramCaptionFormV2;
+export default useFreeStyleForm;
