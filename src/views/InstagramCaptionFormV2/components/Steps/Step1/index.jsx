@@ -27,7 +27,7 @@ const Step1 = () => {
         initialValues={getStepData("step1")}
         onSubmit={(values) => {
           setStepData("step1", values);
-          generateOutpustsHandler();
+          generateOutpustsHandler({ scrollToTop: true, resetOldData: true });
         }}
         validationSchema={validationSchema}
       >

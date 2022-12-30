@@ -32,14 +32,16 @@ export const InstagramCaptionFormV2Provider = ({ children }) => {
     return finalData;
   };
 
-  const generateOutpustsHandler = (autoScroll = true) => {
+  const generateOutpustsHandler = ({ scrollToTop, resetOldData }) => {
     setIsGeneratingOutputs(true);
 
     setTimeout(() => {
-      setOutputs((prev) => [...prev, ...instagramOutputs]);
+      setOutputs((prev) =>
+        resetOldData ? instagramOutputs : [...prev, ...instagramOutputs],
+      );
       setIsGeneratingOutputs(false);
-      autoScroll && router.push("#outputs");
-    }, 200);
+      scrollToTop && router.push("#outputs");
+    }, 500);
   };
 
   const removeOutput = (id) => {

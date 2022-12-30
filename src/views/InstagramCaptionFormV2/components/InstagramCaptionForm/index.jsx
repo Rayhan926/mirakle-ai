@@ -38,7 +38,12 @@ const InstagramCaptionForm = () => {
                       isGeneratingOutputs ? "pointer-events-none" : ""
                     }`}
                     disabled={isGeneratingOutputs}
-                    onClick={() => generateOutpustsHandler(false)}
+                    onClick={() =>
+                      generateOutpustsHandler({
+                        scrollToTop: false,
+                        resetOldData: false,
+                      })
+                    }
                   >
                     Generate More
                     {isGeneratingOutputs && (
