@@ -15,13 +15,13 @@ const InstagramCaptionForm = () => {
         </h1>
 
         <div className="relative">
-          <div className="rounded-[5px] rounded-t-none bg-white shadow">
+          <div className="rounded-[5px] bg-white shadow">
             <div className="px-5 py-6 lg:pt-[50px] pb-6 lg:px-[35px]">
               <Step1 />
             </div>
 
             {outputs.length > 0 && (
-              <div className="mt-9">
+              <div className="mt-6 lg:mt-9">
                 <div
                   className="border-t border-[#F1F1F1] scroll-mt-5"
                   id="outputs"
@@ -31,7 +31,7 @@ const InstagramCaptionForm = () => {
                   ))}
                 </div>
 
-                <div className="px-[33px] pb-12 mt-10">
+                <div className="px-[33px] mt-2 pb-8 lg:pb-12 lg:mt-10">
                   <button
                     type="submit"
                     className={`__create_blog_form_btn !mt-[23px] relative ${

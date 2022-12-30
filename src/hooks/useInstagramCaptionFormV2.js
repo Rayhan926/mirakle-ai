@@ -36,10 +36,7 @@ export const InstagramCaptionFormV2Provider = ({ children }) => {
     setIsGeneratingOutputs(true);
 
     setTimeout(() => {
-      setOutputs((prev) => [
-        ...prev,
-        ...instagramOutputs.map((o) => ({ ...o, id: crypto.randomUUID() })),
-      ]);
+      setOutputs((prev) => [...prev, ...instagramOutputs]);
       setIsGeneratingOutputs(false);
       autoScroll && router.push("#outputs");
     }, 200);

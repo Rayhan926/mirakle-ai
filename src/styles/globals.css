@@ -81,7 +81,7 @@ html {
 
 .__input {
   box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.04);
-  @apply py-[8.5px] text-[13px] px-[15px] border border-[#DEE2DF] focus:border-[#c9ccc9] w-full outline-none rounded-[3px];
+  @apply py-[8.5px] text-[13px] px-[15px] bg-white border border-[#DEE2DF] focus:border-[#c9ccc9] w-full outline-none rounded-[3px];
 }
 
 select {
