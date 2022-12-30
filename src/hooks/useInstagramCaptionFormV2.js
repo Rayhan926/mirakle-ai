@@ -34,6 +34,9 @@ export const InstagramCaptionFormV2Provider = ({ children }) => {
 
   const generateOutpustsHandler = ({ scrollToTop, resetOldData }) => {
     setIsGeneratingOutputs(true);
+    if (resetOldData) {
+      setOutputs([]);
+    }
 
     setTimeout(() => {
       setOutputs((prev) =>
