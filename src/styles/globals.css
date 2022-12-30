@@ -4,6 +4,10 @@
 @tailwind components;
 @tailwind utilities;
 
+html {
+  @apply scroll-smooth;
+}
+
 @layer components {
   .__create_blog_form_title {
     @apply text-lg lg:text-[22px] lg:leading-[26px] text-dark;
