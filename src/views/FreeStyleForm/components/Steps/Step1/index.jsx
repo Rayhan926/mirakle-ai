@@ -23,6 +23,8 @@ const Step1 = () => {
     generateOutpustsHandler,
   } = useFreeStyleForm();
 
+  console.log({ g: getStepData("step1") });
+
   return (
     <div>
       <Formik

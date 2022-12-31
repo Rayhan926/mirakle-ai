@@ -1,4 +1,5 @@
 import useFreeStyleForm from "@hooks/useFreeStyleForm";
+import { useFormikContext } from "formik";
 import React from "react";
 
 const examples = [
@@ -45,7 +46,45 @@ const examples = [
 ];
 
 const TryExamples = () => {
+  const { values } = useFormikContext();
   const { setStepData } = useFreeStyleForm();
+
+  const exampleHandler = (e) => {
+    if (values.title === "" && values.mainPoints === "") {
+      setStepData("step1", {
+        title: e.title,
+        mainPoints: e.mainPoints,
+      });
+    } else {
+      if (
+        !!examples.find(
+          (e) => e.title === values.title && e.mainPoints === values.mainPoints,
+        )
+      ) {
+        setStepData("step1", {
+          title: e.title,
+          mainPoints: e.mainPoints,
+        });
+      } else {
+        if (
+          window.confirm(
+            "This action will replace the current input text you entered",
+          )
+        ) {
+          setStepData("step1", {
+            title: "",
+            mainPoints: "",
+          });
+          setTimeout(() => {
+            setStepData("step1", {
+              title: e.title,
+              mainPoints: e.mainPoints,
+            });
+          }, 0);
+        }
+      }
+    }
+  };
   return (
     <div className="mt-[7px]">
       <p className="text-xs text-[#999999]">Try some examples:</p>
@@ -53,12 +92,7 @@ const TryExamples = () => {
       <div className="flex gap-[7px] flex-wrap mt-1.5">
         {examples.map((e, i) => (
           <button
-            onClick={() => {
-              setStepData("step1", {
-                title: e.title,
-                mainPoints: e.mainPoints,
-              });
-            }}
+            onClick={() => exampleHandler(e)}
             type="button"
             className="text-[10px] px-1.5 py-1 border border-[#DEE0E3] rounded-[3px] bg-[rgba(137,132,222,0.14)] hover:bg-[rgba(137,132,222,0.2)]"
             key={i}
